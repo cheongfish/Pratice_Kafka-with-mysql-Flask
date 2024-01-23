@@ -17,22 +17,50 @@ services:
     networks:
       - network_sql
 
-  test:
+  producer:
     build:
-      dockerfile: dockerfile
-      context: ./python
-    container_name: test
+      dockerfile: Dockerfile
+      context: ./producer
+    container_name: producer
     networks:
       - network_sql
+      - network_kafka
     depends_on:
       - database
+    ports:
+      - "80:9092"
+
     environment:
+    # 추후에 .env로 관리 해야함
       DB_HOST: database  # Use the name of the MySQL container as the host
       DB_USER: root
       DB_PASSWORD: 123456
       DB_DATABASE: test0
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+    networks:
+      - network_kafka
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - "9092:9092"
+    expose:
+      - "9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: kafka
+      KAFKA_CREATE_TOPICS: "stats:1:1"
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    networks:
+      - network_kafka
+    depends_on:
+    - zookeeper
 networks:
   network_sql:
+  network_kafka:
 
 
 

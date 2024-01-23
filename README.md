@@ -1,2 +1,6 @@
 # pratice_mysql_kafka
-practice mysql &amp; kafka on Docker
+practice mysql & kafka on Docker
+
+## produce까지 완료함
+# Reference
+* https://github.com/aranaea/kafka-demo/tree/master
