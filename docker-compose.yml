@@ -10,18 +10,24 @@ services:
       MYSQL_PASSWORD: 123456
       MYSQL_ROOT_PASSWORD: 123456
       MYSQL_DATABASE: test0
-    # ports:
-    #   - "3306:3306"
-    # expose:
-    #   - 3306
     networks:
       - network_sql
+
+  consumer:
+    build:
+      dockerfile: Dockerfile
+      context: ./consumer
+    networks:
+      - network_kafka
+    depends_on:
+      - kafka
+    ports:
+      - "8283:443"
 
   producer:
     build:
       dockerfile: Dockerfile
       context: ./producer
-    container_name: producer
     networks:
       - network_sql
       - network_kafka
