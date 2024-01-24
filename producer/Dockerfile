@@ -16,6 +16,12 @@ RUN pip install wheel setuptools
 RUN pip install --upgrade pip
 RUN pip install -r "requirements.txt"
 
+# 프로덕션 환경에선 .env 파일로 관리하는 게 좋음
+ENV DB_HOST database 
+ENV DB_USER test 
+ENV DB_PASSWORD 123456 
+ENV DB_DATABASE test0
+
 COPY src .
 # exectute start up script
 ENTRYPOINT ["sh", "-c", "sleep 20 && python start.py"]
