@@ -4,30 +4,32 @@
 
 ## Outline
 ### 폴더 구조
-
-workspace_kafka <br>
-├── README.md <br>
-├── consumer<br>
-│   ├── Dockerfile<br>
-│   ├── requirements.txt<br>
-│   └── src<br>
-│       ├── app.py<br>
-│       └── event_reader.py<br>
-├── database<br>
-│   ├── Dockerfile<br>
-│   ├── my.cnf<br>
-│   ├── run_database.sh<br>
-│   └── sql_scripts<br>
-│       ├── creat_table.sql<br>
-│       └── insert_table.sql<br>
-├── docker-compose.yml<br>
-└── producer<br>
-    ├── Dockerfile<br>
-    ├── requirements.txt<br>
-    └── src<br>
-        ├── config.py<br>
-        ├── event_publisher.py<br>
-        └── start.py
+📦workspace_kafka <br>
+ ┣ 📂consumer<br>
+ ┃ ┣ 📂src<br>
+ ┃ ┃ ┣ 📜app.py<br>
+ ┃ ┃ ┗ 📜event_reader.py<br>
+ ┃ ┣ 📜Dockerfile<br>
+ ┃ ┗ 📜requirements.txt<br>
+ ┣ 📂database<br>
+ ┃ ┣ 📂sql_scripts<br>
+ ┃ ┃ ┣ 📜creat_table.sql<br>
+ ┃ ┃ ┗ 📜insert_table.sql<br>
+ ┃ ┣ 📜Dockerfile<br>
+ ┃ ┣ 📜my.cnf<br>
+ ┃ ┗ 📜run_database.sh<br>
+ ┣ 📂producer<br>
+ ┃ ┣ 📂src<br>
+ ┃ ┃ ┣ 📜.env<br>
+ ┃ ┃ ┣ 📜config.py<br>
+ ┃ ┃ ┣ 📜event_publisher.py<br>
+ ┃ ┃ ┗ 📜start.py<br>
+ ┃ ┣ 📜Dockerfile<br>
+ ┃ ┗ 📜requirements.txt<br>
+ ┣ 📜.gitignore<br>
+ ┣ 📜README.md<br>
+ ┗ 📜docker-compose.yml<br>
 
 # Reference
 * https://github.com/aranaea/kafka-demo/tree/master
+
