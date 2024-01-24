@@ -11,6 +11,7 @@
 ## Goal
   * 컨테이너 환경에서 Kafka,Mysql,Flask를 Build & Execute
   * Flask Web(ports:80) UI에 접근해서 결과 확인하기
+    * localhost:9876 접속
 
 ## Directory
 📦workspace_kafka <br>
@@ -43,7 +44,7 @@
 docker compose build
 docker compose -f docker-compose.yml up -d 
 ```
->localhost:443/events 접속하여 결과 학인하기
+>localhost:9876/events 접속하여 결과 학인하기
 # Reference
 * https://github.com/aranaea/kafka-demo/tree/master
 
