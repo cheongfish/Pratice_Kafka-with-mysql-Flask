@@ -1,9 +1,9 @@
-# pratice_mysql_kafka & Kafka on Docker
-## Goal 
-* 컨테이너 환경(Docker)에서 Kafka , Mysql 구동하여 Flask를 통해 Web ui에서 결과 확인
+# Pratice_Kafka with Mysql & Flask
+## Outline 
+* Goal 
+    * 컨테이너 환경(Docker)에서 Kafka , Mysql 구동하여 Flask를 통해 Web ui에서 결과 확인 <br>
 
-## Outline
-### 폴더 구조
+* Directory <br>
 📦workspace_kafka <br>
  ┣ 📂consumer<br>
  ┃ ┣ 📂src<br>
