@@ -22,7 +22,7 @@ services:
     depends_on:
       - kafka
     ports:
-      - "8283:443"
+      - "443:443"
 
   producer:
     build:
@@ -31,10 +31,7 @@ services:
     networks:
       - network_sql
       - network_kafka
-    depends_on:
-      - database
-    ports:
-      - "80:9092"
+
 
     environment:
     # 추후에 .env로 관리 해야함

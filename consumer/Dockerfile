@@ -16,8 +16,7 @@ RUN pip install wheel setuptools
 RUN pip install --upgrade pip
 RUN pip install -r "requirements.txt"
 
-# expose http port
-# 같은 네트워크로 바인딩 했기 때문에 포트 개방 안해도 됨
+# Web UI로 결과 확인해야 하기 때문에 포트 개방해야함
 EXPOSE 443
 
 

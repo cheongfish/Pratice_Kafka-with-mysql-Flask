@@ -12,7 +12,7 @@ conn = pymysql.connect(
 )
 pub_obj = Publisher()
 cur = conn.cursor()
-
+message_list = []
 for i in range(20):
     
     
@@ -22,7 +22,10 @@ for i in range(20):
             """.format(i+1,i+1)
     if cur.execute(sql):
         message = "execute_{} success".format(i)
-    pub_obj.push(message)
+    else:
+        message = "execute_{} false".format(i)
+    message_list.append(message)
+pub_obj.push(message_list)
     
     
 print("All message Proudce Complete")
