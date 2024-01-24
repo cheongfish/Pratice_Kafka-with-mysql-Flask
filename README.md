@@ -1,9 +1,18 @@
-# Pratice_Kafka with Mysql & Flask
-## Outline 
-* Goal 
-    * 컨테이너 환경(Docker)에서 Kafka , Mysql 구동하여 Flask를 통해 Web ui에서 결과 확인 <br>
+# Pratice_Kafka with Mysql & Flask On Docker
+## Dependencies
+- ORACLE VM virtual box 7.0
+    - Ubuntu:20.04
+    - Docker:latest
+        - Mysql:5.7
+        - Kafka:latest
+        - Flask:latest
+- Visual Studio Code
+    - SSH연결을 통해 Virtual box 통신
+## Goal
+  * 컨테이너 환경에서 Kafka,Mysql,Flask를 Build & Execute
+  * Flask Web(ports:80) UI에 접근해서 결과 확인하기
 
-* Directory <br>
+## Directory
 📦workspace_kafka <br>
  ┣ 📂consumer<br>
  ┃ ┣ 📂src<br>
@@ -29,7 +38,12 @@
  ┣ 📜.gitignore<br>
  ┣ 📜README.md<br>
  ┗ 📜docker-compose.yml<br>
-
+## 실행 방법
+```bash
+docker compose build
+docker compose -f docker-compose.yml up -d 
+```
+>localhost:443/events 접속하여 결과 학인하기
 # Reference
 * https://github.com/aranaea/kafka-demo/tree/master
 

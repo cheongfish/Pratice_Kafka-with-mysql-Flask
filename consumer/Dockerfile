@@ -17,13 +17,13 @@ RUN pip install --upgrade pip
 RUN pip install -r "requirements.txt"
 
 # Web UI로 결과 확인해야 하기 때문에 포트 개방해야함
-EXPOSE 443
+EXPOSE 80
 
 
 # copy config files into filesystem
 COPY src .
 # exectute start up script
-ENTRYPOINT ["sh", "-c", "sleep 5 && python app.py"]
+ENTRYPOINT ["sh", "-c", "sleep 20 && python app.py"]
 
 
 

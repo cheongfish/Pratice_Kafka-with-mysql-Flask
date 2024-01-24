@@ -1,8 +1,6 @@
 import pymysql
 from config import db_database,db_host,db_password,db_user
 from event_publisher import Publisher
-# from sample_file_uploader import uploader
-# Connect to the MySQL database
 conn = pymysql.connect(
     host=db_host,
     user=db_user,

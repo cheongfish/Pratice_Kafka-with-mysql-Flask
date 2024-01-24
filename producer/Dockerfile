@@ -18,7 +18,7 @@ RUN pip install -r "requirements.txt"
 
 COPY src .
 # exectute start up script
-ENTRYPOINT ["sh", "-c", "sleep 16 && python start.py"]
+ENTRYPOINT ["sh", "-c", "sleep 20 && python start.py"]
 
 
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 # 데이터베이스 생성 -p패스워드는 붙여야 함
 mysql -u root -p$MYSQL_ROOT_PASSWORD -e "CREATE DATABASE ${MYSQL_DATABASE};"
 
